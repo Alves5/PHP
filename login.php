@@ -4,6 +4,10 @@ echo "
   <head>
     <meta charset='utf-8'>
 <title> Login de Usuário </title>
+<link rel='stylesheet' type='text/css' href='styles/bootstrap-4.1.2/bootstrap.min.css'>
+<link href='plugins/font-awesome-4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' type='text/css' href='styles/main_styles.css'>
+<link rel='stylesheet' type='text/css' href='styles/responsive.css'>
 <style>
 
   body{
@@ -15,17 +19,29 @@ echo "
     <link href='styles/signin.css' rel='stylesheet'>
   </head>
   <body class='text-center'>
-    <form class='form-signin' method='post' action='salvar2.php'>
-      <img class='mb-4' src='images/.png' alt='' width='72' height='72'>
-      <h1 style='color: #fff;' class='h3 mb-3 font-weight-normal'>Entre na sua conta</h1>
-      <label for='login' class='sr-only'>Nome de usuário:</label>
-      <input type='text' id='login' name='login' class='form-control' placeholder='Login' required autofocus>
-      <label for='senha' class='sr-only'>Senha</label>
-      <input type='password' id='senha' name='senha' class='form-control' placeholder='Senha' required><br>
-      <button class='btn btn-lg btn-success btn-block' type='submit' id='entrar' name='entrar'>Entrar</button>
-      <a style='color: #fff;' href='criar.php'>Cadastre-se.</a><br>
-      <a style='color: #fff;' href='index.php'>Home</a>
-    </form>
+    <div class='col-12 col-lg-6 '>
+      <div class='footer_about'>
+        <div class='footer_logo'>Banco<span>Tech</span></div>
+          <div class='contact_container'>
+            <form action='#' id='contact_form' class='contact_form'>
+              <div class='row'>
+                <div class='col-md-6'>
+                  <input type='email' class='contact_input' placeholder='Seu e-mail' required='required'>
+                </div>
+                <div class='col-md-6'>
+                  <input type='password' class='contact_input' placeholder='Sua senha' required='required'> 
+                </div>
+              </div>
+              <button class='contact_button'>Login</button>
+            </form>
+          </div>
+      </div>  
+    </div>
   </body>
+  <script src='js/jquery-3.2.1.min.js'></script>
+  <script src='styles/bootstrap-4.1.2/popper.js'></script>
+  <script src='styles/bootstrap-4.1.2/bootstrap.min.js'></script>
+  <script src='js/custom.js'></script>
+</html>
 ";
 ?>

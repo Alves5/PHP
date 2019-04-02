@@ -15,17 +15,21 @@ echo "
     <link href='styles/signin.css' rel='stylesheet'>
   </head>
   <body class='text-center'>
-    <form class='form-signin' method='post' action='salvar1.php'>
-      <img class='mb-4' src='images/.png' alt='' width='72' height='72'>
-      <h1 style='color: #fff;' class='h3 mb-3 font-weight-normal'>Crie a sua conta</h1>
-      <label for='login' class='sr-only'>Nome de usuário:</label>
-      <input type='text' id='login' name='usr' class='form-control' placeholder='Login' required autofocus>
-      <label for='senha' class='sr-only'>Senha</label>
-      <input type='password' id='senha' name='pwd' class='form-control' placeholder='Senha' required><br>
-      <button class='btn btn-lg btn-success btn-block' type='submit' id='entrar' name='entrar'>Entrar</button>
-      <a style='color: #fff;' href='criar.php'>Cadastre-se.</a><br>
+    <div class='contact_container'>
+      <form action='#' id='contact_form' class='contact_form'>
+        <div class='row'>
+          <div class='col-md-6'>
+            <input type='text' class='contact_input' placeholder='Seu nome' required='required'>
+          </div>
+          <div class='col-md-6'>
+            <input type='email' class='contact_input' placeholder='Seu e-mail' required='required'>
+          </div>
+        </div>
+    <button class='contact_button'>Enviar</button>
+  </form>
+</div>
+    <a style='color: #fff;' href='criar.php'>Cadastre-se.</a><br>
       <a style='color: #fff;' href='index.php'>Home</a>
-    </form>
   </body>
 ";
 ?>
