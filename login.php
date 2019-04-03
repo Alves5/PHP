@@ -13,6 +13,10 @@ echo "
   body{
     background-image: url(images/tabs.jpg);
   }
+  #log{
+    background: transparent;
+  }
+  
 
 </style>
     <link href='styles/btp.css' rel='stylesheet'>
@@ -20,21 +24,27 @@ echo "
   </head>
   <body class='text-center'>
     <div class='col-12 col-lg-6 '>
-      <div class='footer_about'>
-        <div class='footer_logo'>Banco<span>Tech</span></div>
-          <div class='contact_container'>
-            <form action='#' id='contact_form' class='contact_form'>
-              <div class='row'>
-                <div class='col-md-6'>
-                  <input type='email' class='contact_input' placeholder='Seu e-mail' required='required'>
-                </div>
-                <div class='col-md-6'>
-                  <input type='password' class='contact_input' placeholder='Sua senha' required='required'> 
-                </div>
-              </div>
-              <button class='contact_button'>Login</button>
-            </form>
-          </div>
+      <div class='card-columns'>
+        <div class='card text-center' style='width:1337px;' id='log'>
+          <div class='footer_about'>
+            <div class='footer_logo'>Banco<span>Tech</span></div>
+              <div class='contact_container'>
+                <form action='#' id='contact_form' class='contact_form'>
+                  <div class='row '>
+                    <div class='col-md-3'>
+                    </div>
+                    <div class='col-md-3'>
+                      <input type='email' class='contact_input' placeholder='Seu e-mail' required='required'>
+                    </div>
+                    <div class='col-md-3'>
+                      <input type='password' class='contact_input' placeholder='Sua senha' required='required'> 
+                    </div>
+                  </div>
+                  <input type='submit' class='contact_button' value='Login'>
+                </form>
+                </div>  
+            </div>
+        </div>
       </div>  
     </div>
   </body>

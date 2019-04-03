@@ -19,8 +19,8 @@
             public function getSenha(){
                 return $this->senha;
             }
-            public function setSenha($p){
-                $this->senha = $p;
+            public function setSenha($s){
+                $this->senha = $s;
             }
     }
 ?>
