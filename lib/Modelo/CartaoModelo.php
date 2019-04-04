@@ -11,22 +11,22 @@
         public function setSaldo($s){
             $this->saldo = $s;
         }
-        public function gettipoCartao(){
+        public function getTipoCartao(){
             return $this->tipoCartao;
         }
-        public function settipoCartao($t){
+        public function setTipoCartao($t){
             $this->tipoCartao = $t;
         }
-        public function getnumeroCartao(){
+        public function getNumeroCartao(){
             return $this->numeroCartao;
         }
-        public function setnumeroCartao($n){
+        public function setNumeroCartao($n){
             $this->numeroCartao = $n;
         }
-        public function getnomeBanco(){
+        public function getNomeBanco(){
             return $this->nomeBanco;
         }
-        public function setnomeBanco($b){
+        public function setNomeBanco($b){
             $this->nomeBanco = $b;
         }
 

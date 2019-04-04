@@ -13,28 +13,28 @@
         public function setId($i){
             $this->id = $i;
         }
-        public function getmelhorDiaDeCompra(){
+        public function getMelhorDiaDeCompra(){
             return $this->melhorDiaDeCompra;
         }
-        public function setmelhorDiaDeCompra($m){
+        public function setMelhorDiaDeCompra($m){
             $this->melhorDiaDeCompra = $m;
         }
-        public function getdataDeFatura(){
+        public function getDataDeFatura(){
             return $this->dataDeFatura;
         }
-        public function setdataDeFatura($d){
+        public function setDataDeFatura($d){
             $this->dataDeFatura = $d;
         }
-        public function getlimitePago(){
+        public function getLimitePago(){
             return $this->limitePago;
         }
-        public function setlimitePago($p){
+        public function setLimitePago($p){
             $this->limitePago = $p;
         }        
-        public function getlimiteAvista(){
+        public function getLimiteAvista(){
             return $this->limiteAvista;
         }
-        public function setlimiteAvista($a){
+        public function setLimiteAvista($a){
             $this->limiteAvista = $a;
         }
     }
