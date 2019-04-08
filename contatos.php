@@ -43,6 +43,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class='col-lg-6 contact_col magic_fade_in'>
 					<div class='message_form_container'>
 						<div class='contact_title'>Ou por E-mail</div>

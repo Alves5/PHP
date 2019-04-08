@@ -1,5 +1,5 @@
 <?php
-require_once("lib/Controle/mysql.ini");
+require_once("lib/Controle/Conexao.class.php");
 require_once("lib/Modelo/CartaoModelo.class.php");
 final class CartaoControle{
     public function selecionarId($id){
@@ -40,10 +40,10 @@ final class CartaoControle{
         $conexao = new Conexao("lib/Controle/mysql.ini");
         $sql = "INSERT INTO Cartao(numeroCartao, saldo, nomeBanco, tipoCartao) VALUES(:nc,:sa,:nb,:tc);";
         $comando = $conexao->getConexao()->prepare($sql);
-        $comando->bindParam("nc", $cartao->getNumeroCartao());
-        $comando->bindParam("sa", $cartao->getSaldo());
-        $comando->bindParam("nb", $cartao->getNomeBanco());
-        $comando->bindParam("tc", $cartao->getTipoCartao());
+        $comando->bindValue("nc", $cartao->getNumeroCartao());
+        $comando->bindValue("sa", $cartao->getSaldo());
+        $comando->bindValue("nb", $cartao->getNomeBanco());
+        $comando->bindValue("tc", $cartao->getTipoCartao());
         if($comando->execute()){
             $conexao->__destruct();
             return true;
@@ -56,11 +56,11 @@ final class CartaoControle{
         $conexao = new Conexao("lib/Controle/mysql.ini");
         $sql ="UPDATE Cartao SET numeroCartao=:nc, saldo=:sa, nomeBanco=:nb, tipoCartao=:tc WHERE id=:id;";
         $comando = $conexao->getConexao()->prepare($sql);
-        $comando->bindParam("id", $cartaoA->getId());
-        $comando->bindParam("nc", $cartaoA->getNumeroCartao());
-        $comando->bindParam("sa", $cartaoA->getSaldo());
-        $comando->bindParam("nb", $cartaoA->getNomeBanco());
-        $comando->bindParam("tc", $cartaoA->getTipoCartao());
+        $comando->bindValue("id", $cartaoA->getId());
+        $comando->bindValue("nc", $cartaoA->getNumeroCartao());
+        $comando->bindValue("sa", $cartaoA->getSaldo());
+        $comando->bindValue("nb", $cartaoA->getNomeBanco());
+        $comando->bindValue("tc", $cartaoA->getTipoCartao());
         if($comando->execute()){
             $conexao->__destruct();
             return true;

@@ -1,32 +1,7 @@
-<?php
-require('header.php');
-require('log.txt');
-	echo"
-<div id='index'>
-		";
-		echo "
-			<div class='menu_overlay trans_400'></div>
-			<div class='menu trans_400'>
-				<div class='menu_close_container'><div class='menu_close'><div></div><div></div></div></div>
-				<div class='log_reg'>
-					<div class='log_reg_content d-flex flex-row align-items-center justify-content-end'>
-						<div class='login log_reg_text'><a href='#'>Login</a></div>
-						<div class='register log_reg_text'><a href='#'>Criar</a></div>
-					</div>
-				</div>
-								
-				<nav class='menu_nav'>
-					<ul>
-						<li><button id='inde'>Home</button></li>
-						<li><button id='servico'>Serviços</button></li>
-						<li><button id='contato'>Contatos</button></li>
-					</ul>
-				</nav>
-			</div>
-
-			<div class='menu_overlay trans_400'></div>
+	<div class='menu_overlay trans_400'></div>
 	<div class='menu trans_400'>
-		<div class='menu_close_container'><div class='menu_close'><div></div><div></div></div></div>
+		<div class='menu_close_container'><div class='menu_close'>
+		<div></div><div></div></div></div>
 		<div class='log_reg'>
 			<div class='log_reg_content d-flex flex-row align-items-center justify-content-end'>
 				<div class='login log_reg_text'><a href='#'>Login</a></div>
@@ -153,8 +128,4 @@ require('log.txt');
 				</div>
 			</div>
 		</div>
-	</div>";
-	echo "
-</div>";
-require_once("rodape.php");
-?>
+	</div>

@@ -16,6 +16,8 @@
 <link rel='stylesheet' type='text/css' href='styles/contact_responsive.css'>
 <link rel='stylesheet' type='text/css' href='styles/services.css'>
 <link rel='stylesheet' type='text/css' href='styles/services_responsive.css'>
+<link rel="stylesheet" type='text/css' href='css/modal.css' >
+
 </head>
 <body>
 <div class='super_container'>
@@ -34,8 +36,10 @@
 						</nav>
 						<div class='log_reg'>
 							<div class='log_reg_content d-flex flex-row align-items-center justify-content-start'>
-								<div class='login log_reg_text'><a href='login.php'><img src='https://img.icons8.com/color/48/000000/businessman.png'></a></div>
+								<div class='login log_reg_text'><a href='#' data-toggle='modal' data-target='#ExemploModalCentralizado'><img src='images/icon.png'></a></div>
+								
 							</div>
+							
 						</div>
 						<div class='hamburger ml-auto'><i class='fa fa-bars' aria-hidden='true'></i></div>
 					</div>

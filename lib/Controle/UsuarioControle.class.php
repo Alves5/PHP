@@ -1,5 +1,5 @@
 <?php
-require_once("lib/Controle/mysql.ini");
+require_once("lib/Controle/Conexao.class.php");
 require_once("lib/Modelo/UsuarioModelo.class.php");
 final class UsuarioControle{
     public function inserirUsuario($usuario){

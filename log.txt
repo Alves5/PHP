@@ -1,0 +1,60 @@
+<!-- Modal -->
+	<div class='modal fade' id='ExemploModalCentralizado' tabindex='-1' role='dialog' aria-labelledby='TituloModalCentralizado' aria-hidden='true'>
+	  <div class='modal-dialog modal-dialog-centered' role='document'>
+		<div class='modal-content'>
+		  <div class='modal-header'>
+		  <div class='logo'><a href='#'>Banco<span>Tech</span></a></div>
+			<button type='button' class='close' data-dismiss='modal' aria-label='Fechar'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>
+		  <div class='modal-body'>
+		  	<div class='row'>
+		  		<div class='col-sm-12'>
+					<button id='login' type='button' class='btn btn-primary btn-sm'>Login</button>
+					<button id='cadastro' type='button' class='btn btn-secondary btn-sm'>Cadastre-se</button>
+					<div class='row'>
+			  			<div class='col-12' style='display: none;'>
+						    <form action='#' method='POST'>
+                                <div class='form-group'>
+                                    <label for='exampleInputUser1'>Usuário</label>
+                                    <input type='text' class='form-control' id='exampleInputUser1' placeholder='Usuário'>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='exampleInputPassword1'>Senha</label>
+                                    <input type='password' class='form-control' id='exampleInputPassword1' placeholder='Senha'>
+                                </div>
+                                <div class='form-group form-check'>
+                                    <input type='checkbox' class='form-check-input' id='exampleCheck1'>
+                                    <label class='form-check-label' for='exampleCheck1'>Clique em mim</label>
+                                </div>
+                                <input type='submit' class='btn btn-primary' value='Entrar'/>
+							</form>
+			  			</div>
+			  			<div class='col-12' style='display: block;'>
+						    <form action='#' method='POST'>
+                                <div class='form-group'>
+                                    <label for='exampleInputUser1'>Digite um usuário</label>
+                                    <input type='text' class='form-control' id='exampleInputUser1' placeholder='Digite um usuário'>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='exampleInputPassword1'>Digite uma senha</label>
+                                    <input type='password' class='form-control' id='exampleInputPassword1' placeholder='Digite uma senha'>
+                                </div>
+                                <div class='form-group form-check'>
+                                    <input type='checkbox' class='form-check-input' id='exampleCheck1'>
+                                    <label class='form-check-label' for='exampleCheck1'>Clique em mim</label>
+                                </div>
+                                <input type='submit' class='btn btn-primary' value='Cadastrar-se'/>
+							</form>
+			  			</div>
+					</div>
+		  		</div>
+			</div>
+		  </div>
+		  <div class='modal-footer'>
+			<button type='button' class='btn btn-secondary' data-dismiss='modal'>Fechar</button>
+		  </div>
+		</div>
+	  </div>
+	</div>

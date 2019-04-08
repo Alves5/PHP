@@ -3,22 +3,19 @@ echo "
 <html >
   <head>
     <meta charset='utf-8'>
-<title> Login de Usuário </title>
-<link rel='stylesheet' type='text/css' href='styles/bootstrap-4.1.2/bootstrap.min.css'>
-<link href='plugins/font-awesome-4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' type='text/css' href='styles/main_styles.css'>
-<link rel='stylesheet' type='text/css' href='styles/responsive.css'>
-<style>
-
-  body{
-    background-image: url(images/tabs.jpg);
-  }
-  #log{
-    background: transparent;
-  }
-  
-
-</style>
+    <title> Login de Usuário </title>
+    <link rel='stylesheet' type='text/css' href='styles/bootstrap-4.1.2/bootstrap.min.css'>
+    <link href='plugins/font-awesome-4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='styles/main_styles.css'>
+    <link rel='stylesheet' type='text/css' href='styles/responsive.css'>
+    <style>
+      body{
+        background-image: url(images/tabs.jpg);
+      }
+      #log{
+        background: transparent;
+      }
+    </style>
     <link href='styles/btp.css' rel='stylesheet'>
     <link href='styles/signin.css' rel='stylesheet'>
   </head>
@@ -42,7 +39,8 @@ echo "
                   </div>
                   <input type='submit' class='contact_button' value='Login'>
                 </form>
-                </div>  
+                </div>
+              <a href='criar.php'> Cadastre-se </a>  
             </div>
         </div>
       </div>  
