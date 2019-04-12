@@ -8,14 +8,14 @@ final class CartaoControle{
         $comando->bindParam("id", $id);
         $comando->execute();
         $consulta = $comando->fetch();
-        $filmes = new CartaoModelo();
-        $filmes->setId($consulta->id);
-        $filmes->setNumeroCartao($consulta->numeroCartao);
-        $filmes->setSaldo($consulta->saldo);
-        $filmes->setNomeBanco($consulta->nomeBanco);
-        $filmes->setTipoCartao($consulta->tipoCartao);
+        $modelo = new CartaoModelo();
+        $modelo->setId($consulta->id);
+        $modelo->setNumeroCartao($consulta->numeroCartao);
+        $modelo->setSaldo($consulta->saldo);
+        $modelo->setNomeBanco($consulta->nomeBanco);
+        $modelo->setTipoCartao($consulta->tipoCartao);
         $conexao->__destruct();
-        return $filmes;
+        return $modelo;
     }
     public function consultaCartoes(){
         $conexao = new Conexao("lib/Controle/mysql.ini");

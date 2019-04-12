@@ -16,10 +16,12 @@
 <link rel='stylesheet' type='text/css' href='styles/contact_responsive.css'>
 <link rel='stylesheet' type='text/css' href='styles/services.css'>
 <link rel='stylesheet' type='text/css' href='styles/services_responsive.css'>
+<link rel="stylesheet" type='text/css' href='css/modal.css' >
+
 </head>
 <body>
 <div class='super_container'>
-<header class='header trans_400'>
+	<header class='header trans_400'>
 		<div class='container'>
 			<div class='row'>
 				<div class='col'>
@@ -27,17 +29,32 @@
 						<div class='logo'><a href='#'>Banco<span>Tech</span></a></div>
 						<nav class='main_nav ml-auto mr-auto'>
 							<ul class='d-flex flex-row align-items-center justify-content-start'>
-                            <li><a href='#' id='inde'>Home</a></li>
-							<li><a href='#' id='servico'>Serviços</a></li>
-							<li><a href='#' id='contato'>Contatos</a></li>
+                <li><a href='#' id='inde'>Home</a></li>
+								<li><a href='#' id='servico'>Serviços</a></li>
+								<li><a href='#' id='contato'>Contatos</a></li>'
 							</ul>
 						</nav>
-						<div class='log_reg'>
-							<div class='log_reg_content d-flex flex-row align-items-center justify-content-start'>
-								<div class='login log_reg_text'><a href='login.php'><img src='https://img.icons8.com/color/48/000000/businessman.png'></a></div>
-							</div>
+						<div class='log_reg'>	
+<?php
+if (isset($_COOKIE['login'])) {
+	echo"
+							<font color='white'>Bem-Vindo, {$_COOKIE['login']} </font>
+							<a class='btn btn-secondary' href='logout.php'> Sair</a>";
+}else{
+  echo "
+							<div class='log_reg_content d-flex flex-row align-items-center justify-content-start'>							
+								<div class='login log_reg_text'>
+									<a href='#' data-toggle='modal' data-target='#ExemploModalCentralizado'>
+										<img src='images/icon.png'>
+									</a>
+								</div>
+							</div>";
+}
+?>
 						</div>
-						<div class='hamburger ml-auto'><i class='fa fa-bars' aria-hidden='true'></i></div>
+						<div class='hamburger ml-auto'>
+							<i class='fa fa-bars' aria-hidden='true'></i>
+						</div>
 					</div>
 				</div>
 			</div>

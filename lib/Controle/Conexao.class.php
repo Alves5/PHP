@@ -44,7 +44,7 @@ final class Conexao{
 		$this->type = (isset($tipo)) ? $tipo : NULL;
 	}
 	private function analisarDados(){
-		if($this->getHost() == NULL || $this->getUser() == NULL || $this->getPwd() == NULL || $this->getDb() == NULL || $this->getType() == NULL){
+		if($this->getHost() == NULL || $this->getUser() == NULL || $this->getDb() == NULL || $this->getType() == NULL){
 			return false;	
 		}else{
 			return true;

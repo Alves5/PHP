@@ -8,7 +8,7 @@ let btnServico = document.getElementById("servico");
 let btnContato = document.getElementById("contato");
 //let dj2 = document.getElementById("dj2");
 btnIndex.onclick = function() {
-	requisitarArquivo("index.php", divIndex);
+	requisitarArquivo("inde.php", divIndex);
 };
 btnServico.onclick = function() {
 	requisitarArquivo("servicos.php", divIndex);
