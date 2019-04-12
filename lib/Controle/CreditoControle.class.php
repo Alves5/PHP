@@ -1,5 +1,5 @@
 <?php
-require_once("lib/Controle/mysql.ini");
+require_once("lib/Controle/Conexao.class.php");
 require_once("lib/Modelo/CreditoModelo.class.php");
 final class CreditoControle{
     public function consultaCartoesCredito(){
