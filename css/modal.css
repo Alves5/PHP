@@ -75,29 +75,30 @@
 
 .modal-content {
     background-color: #ececec;
-    border: 1px solid #bdc3c7;
-    border-radius: 0px;
+    border: 20px solid #ececec;
+    border-radius: 20px;
     outline: 0;
 }
 
 .modal-header {
     min-height: 16.43px;
-    padding: 15px 15px 15px 15px;
+    padding: 20px 20px 20px 20px;
     border-bottom: 0px;
-    background-image: url(../images/tabs.jpg);
+    background-color:#dadfe1;
 }
 
 .modal-body {
     position: relative;
-    padding: 5px 15px 5px 15px;
-    background-image: url(../images/tabs.jpg);
+    padding: 15px 15px 15px 15px;
+    border: 15px;
+
 }
 
 .modal-footer {
     padding: 15px 15px 15px 15px;
     text-align: left;
-    border-top: 0px;
-    background-image: url(../images/tabs.jpg);
+    border-top: 5px;
+    
 }
 
 .checkbox {
@@ -105,7 +106,7 @@
 }
 
 .btn {
-    border-radius: 0px;
+    border-radius: 10px;
 }
 
 .btn:focus,
@@ -136,5 +137,6 @@
 }
 
 .form-control {
-  border-radius: 0px;
+  border-radius: 5px;
+  
 }
