@@ -25,7 +25,7 @@ final class CartaoControle{
         $lista = [];
         foreach($resultado as $item){
             $cartao = new CartaoModelo();
-            $cartao->setId($item->id);
+            //$cartao->setId($item->id);
             $cartao->setNumeroCartao($item->numeroCartao);
             $cartao->setSaldo($item->saldo);
             $cartao->setNomeBanco($item->nomeBanco);

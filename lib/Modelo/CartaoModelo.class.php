@@ -1,15 +1,13 @@
 <?php
     class CartaoModelo{
-        private $id;
+        private $id_conta;
         private $saldo;
         private $tipoCartao;
         private $numeroCartao;
         private $nomeBanco;
 
-        public function getId(){
-            return $this->id;
-        }
-        public function setId($id){
+        
+        public function setIdConta($id){
             $this->id = $id;
         }
         public function getSaldo(){

@@ -6,7 +6,8 @@ switch($Qform){
         $tCartao = $_POST["tipoCartao"];
         $nCartao = $_POST["numeroCartao"];
         $nBanco = $_POST["nomeBanco"];
-            
+        $idConta = $_POST["id"];
+
         require_once("lib/Controle/CartaoControle.class.php");
 
         $executar = new CartaoControle();

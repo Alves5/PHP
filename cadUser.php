@@ -1,18 +1,13 @@
 <?php
 require('lib/Modelo/ContaModelo.class.php');
 require('lib/Controle/Conexao.class.php');
-
 $login = $_POST['login'];
 $senha = $_POST['pwd'];
 $connect = new Conexao("lib/Controle/mysql.ini");
-$sql = "SELECT usuario FROM conta WHERE usuario = '$login'";  
+$sql = "SELECT * FROM conta WHERE usuario = '$login'";  
 $comando = $connect->getConexao()->prepare($sql);
 $comando ->bindValue("usuario", $login);
 $comando->execute();
-$quer = "SELECT usuario FROM conta";
-$comand = $connect->getConexao()->prepare($quer);
-$comand->execute();
-$resu = $comand->fetch();
 
 $usu = new ContaModelo();
 
@@ -24,7 +19,7 @@ if($login == "" or $login == null or $senha == "" or $senha == null){
   </script>";
  
 }else{
-  if($resu == $login){
+  if($comando->fetchAll()  != NULL){
     echo"
     <script language='javascript' type='text/javascript'>
       alert('Esse login já existe');

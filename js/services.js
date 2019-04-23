@@ -1,19 +1,3 @@
-/* JS Document */
-
-/******************************
-
-[Table of Contents]
-
-1. Vars and Inits
-2. Set Header
-3. Init Menu
-4. Init Dropdown
-5. Init SVG
-6. Init Tabs
-7. Init Magic
-
-
-******************************/
 
 $(document).ready(function()
 {

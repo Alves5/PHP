@@ -10,51 +10,34 @@
 4. Init Dropdown
 5. Init SVG
 6. Init Magic
-
-
 ******************************/
-
-$(document).ready(function()
-{
+$(document).ready(function(){
 	"use strict";
-
 	/* 
-
 	1. Vars and Inits
-
 	*/
-
 	var header = $('.header');
 	var ctrl = new ScrollMagic.Controller();
-
 	setHeader();
-
-	$(window).on('resize', function()
-	{
+	$(window).on('resize', function(){
 		setHeader();
-
 		setTimeout(function()
 		{
 			$(window).trigger('resize.px.parallax');
 		}, 375);
 	});
-
 	$(document).on('scroll', function()
 	{
 		setHeader();
 	});
-
 	initMenu();
 	initDropdown();
 	initSvg();
 	initMagic();
 
 	/* 
-
 	2. Set Header
-
 	*/
-
 	function setHeader()
 	{
 		if($(window).scrollTop() > 91)
@@ -66,45 +49,34 @@ $(document).ready(function()
 			header.removeClass('scrolled');
 		}
 	}
-
 	/* 
-
 	3. Init Menu
-
 	*/
-
 	function initMenu()
 	{
 		var hamb = $('.hamburger');
 		var menu = $('.menu');
 		var menuOverlay = $('.menu_overlay');
 		var menuClose = $('.menu_close_container');
-
 		hamb.on('click', function()
 		{
 			menu.toggleClass('active');
 			menuOverlay.toggleClass('active');
 		});
-
 		menuOverlay.on('click', function()
 		{
 			menuOverlay.toggleClass('active');
 			menu.toggleClass('active');
 		});
-
 		menuClose.on('click', function()
 		{
 			menuOverlay.toggleClass('active');
 			menu.toggleClass('active');
 		});
 	}
-
 	/* 
-
 	4. Init Dropdown
-
 	*/
-
 	function initDropdown()
 	{
 		if($('.domain_search_dropdown').length)
@@ -123,13 +95,9 @@ $(document).ready(function()
 			});
 		}
 	}
-
 	/* 
-
 	5. Init SVG
-
 	*/
-
 	function initSvg()
 	{
 		jQuery('img.svg').each(function()
@@ -161,13 +129,9 @@ $(document).ready(function()
 			}, 'xml');
 		});
 	}
-
 	/*
-
 	6. Init Magic
-
 	*/
-
 	function initMagic()
 	{
 		if($('.magic_fade_in').length)
@@ -188,5 +152,4 @@ $(document).ready(function()
 	    	});
 		}
 	}
-
 });

@@ -1,46 +1,8 @@
 <?php
 require('header.php');
 require('log.txt');
-	echo"
+echo"
 <div id='index'>
-		";
-		echo "
-			<div class='menu_overlay trans_400'></div>
-			<div class='menu trans_400'>
-				<div class='menu_close_container'><div class='menu_close'><div></div><div></div></div></div>
-				<div class='log_reg'>
-					<div class='log_reg_content d-flex flex-row align-items-center justify-content-end'>
-						<div class='login log_reg_text'><a href='#'>Login</a></div>
-						<div class='register log_reg_text'><a href='#'>Criar</a></div>
-					</div>
-				</div>
-								
-				<nav class='menu_nav'>
-					<ul>
-						<li><button id='inde'>Home</button></li>
-						<li><button id='servico'>Serviços</button></li>
-						<li><button id='contato'>Contatos</button></li>
-					</ul>
-				</nav>
-			</div>
-
-			<div class='menu_overlay trans_400'></div>
-	<div class='menu trans_400'>
-		<div class='menu_close_container'><div class='menu_close'><div></div><div></div></div></div>
-		<div class='log_reg'>
-			<div class='log_reg_content d-flex flex-row align-items-center justify-content-end'>
-				<div class='login log_reg_text'><a href='#'>Login</a></div>
-				<div class='register log_reg_text'><a href='#'>Criar</a></div>
-			</div>
-		</div>
-		<nav class='menu_nav'>
-			<ul>
-				<li><a href='index.php' id='inde'>Home</a></li>
-				<li><a href='servicos.php' id='servicos'>Serviços</a></li>
-				<li><a href='contatos.php' id='contato'>Contatos</a></li>
-			</ul>
-		</nav>
-	</div>
 	<div class='home'>
 		<div class='home_background'></div>
 		<div class='background_image background_city' style='background-image:url(images/city.png)'></div>
@@ -153,8 +115,7 @@ require('log.txt');
 				</div>
 			</div>
 		</div>
-	</div>";
-	echo "
+	</div>
 </div>";
 require_once("rodape.php");
 ?>

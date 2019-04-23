@@ -1,31 +1,7 @@
-/* JS Document */
-
-/******************************
-
-[Table of Contents]
-
-1. Vars and Inits
-2. Set Header
-3. Init Menu
-4. Init Dropdown
-5. Init SVG
-6. Init Tabs
-7. Init Magic
-8. Init Google Map
-
-
-******************************/
 
 $(document).ready(function()
 {
 	"use strict";
-
-	/* 
-
-	1. Vars and Inits
-
-	*/
-
 	var header = $('.header');
 	var map;
 	var ctrl = new ScrollMagic.Controller();
@@ -53,12 +29,6 @@ $(document).ready(function()
 	initTabs();
 	initMagic();
 	initGoogleMap();
-
-	/* 
-
-	2. Set Header
-
-	*/
 
 	function setHeader()
 	{
@@ -104,12 +74,6 @@ $(document).ready(function()
 		});
 	}
 
-	/* 
-
-	4. Init Dropdown
-
-	*/
-
 	function initDropdown()
 	{
 		if($('.domain_search_dropdown').length)
@@ -129,12 +93,6 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
-
-	5. Init SVG
-
-	*/
-
 	function initSvg()
 	{
 		jQuery('img.svg').each(function()
@@ -146,32 +104,21 @@ $(document).ready(function()
 
 			jQuery.get(imgURL, function(data)
 			{
-				// Get the SVG tag, ignore the rest
 				var $svg = jQuery(data).find('svg');
 
-				// Add replaced image's ID to the new SVG
 				if(typeof imgID !== 'undefined') {
 				$svg = $svg.attr('id', imgID);
 				}
-				// Add replaced image's classes to the new SVG
 				if(typeof imgClass !== 'undefined') {
 				$svg = $svg.attr('class', imgClass+' replaced-svg');
 				}
 
-				// Remove any invalid XML tags as per http://validator.w3.org
 				$svg = $svg.removeAttr('xmlns:a');
 
-				// Replace image with new SVG
 				$img.replaceWith($svg);
 			}, 'xml');
 		});
 	}
-
-	/* 
-
-	6. Init Tabs
-
-	*/
 
 	function initTabs()
 	{
@@ -189,12 +136,6 @@ $(document).ready(function()
 			});
 		}
 	}
-
-	/*
-
-	7. Init Magic
-
-	*/
 
 	function initMagic()
 	{
@@ -216,12 +157,6 @@ $(document).ready(function()
 	    	});
 		}
 	}
-
-	/* 
-
-	8. Init Google Map
-
-	*/
 
 	function initGoogleMap()
 	{
@@ -257,10 +192,8 @@ $(document).ready(function()
 			]
     	}
 
-    	// Initialize a map with options
     	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-		// Re-center map after window resize
 		google.maps.event.addDomListener(window, 'resize', function()
 		{
 			setTimeout(function()
