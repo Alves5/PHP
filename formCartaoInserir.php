@@ -1,6 +1,7 @@
 <?php
     echo"
     <form id='message_form' class='message_form' action='ExecucaoCartao.php' enctype='multipart/form-data' method='POST'>
+        <input type='text' class='message_input' name='cpf' placeholder='CPF' /></br>
         <input type='text' class='message_input' name='saldo' placeholder='Saldo' /></br>
         <label>Tipo do Cartão</label></br>
         <select name='tipoCartao' class='form-control' required>

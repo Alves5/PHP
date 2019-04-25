@@ -4,9 +4,11 @@
         private $saldo;
         private $tipoCartao;
         private $numeroCartao;
-        private $nomeBanco;
-
+        private $nomeBanco;       
         
+        public function getIdConta(){
+            return $this->id_conta;
+        }
         public function setIdConta($id){
             $this->id = $id;
         }

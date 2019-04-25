@@ -2,10 +2,11 @@
     class HistoricoModelo{
         private $id_history;
         private $id_card;
-        private $nomeRegistro;
+        private $nome;
         private $data;
         private $valorE;
         private $valorS;
+        private $valorA;
 
         public function getIdHistorico(){
             return $this->id_history;
@@ -18,14 +19,14 @@
             return $this->id_card;
         }
         public function setIdCartao($i){
-            $this->id_card = $id_card;
+            $this->id_card = $i;
         }
 
         public function getNomeRegistro(){
-            return $this->nomeRegistro;
+            return $this->nome;
         }
         public function setNomeRegistro($m){
-            $this->nomeRegistro = $m;
+            $this->nome = $m;
         }
         public function getData(){
             return $this->data;
@@ -44,6 +45,13 @@
         }
         public function setValorS($a){
             $this->valorS = $a;
+        }
+
+        public function getValorA(){
+            return $this->valorA;
+        }
+        public function setValorA($a){
+            $this->valorA = $a;
         }
     }
 ?>

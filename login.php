@@ -1,8 +1,13 @@
 <?php
 require('lib/Modelo/ContaModelo.class.php');
 require('lib/Controle/Conexao.class.php');
+require('lib/Controle/MyCripty.class.php');
+$mc = new MyCripty();
+$mc -> chave = 97;
+$mc -> add_text = md5(sha1("texto chave aqui"));
+$senha = $mc->enc($_POST['senha']);
 $user = $_POST['user'];
-$senha = $_POST['senha'];
+
 $connect = new Conexao("lib/Controle/mysql.ini");
 $verifica = "SELECT * FROM conta WHERE usuario = '$user' AND senha = '$senha'";
 $comando = $connect->getConexao()->prepare($verifica);
@@ -17,8 +22,9 @@ if ($comando->fetchAll() == NULL){
   </script>";
   die();
 }else{
-    setcookie("login",$user);
-    header("Location: index.php");
+  setcookie("login",$user);
+  header("Location: index.php");
+
 }
 
 

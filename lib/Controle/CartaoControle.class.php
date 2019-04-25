@@ -35,15 +35,15 @@ final class CartaoControle{
         $conexao->__destruct();
         return $lista;
     }
-
     public function inserirCartao($cartao){
         $conexao = new Conexao("lib/Controle/mysql.ini");
-        $sql = "INSERT INTO Cartao(numeroCartao, saldo, nomeBanco, tipoCartao) VALUES(:nc,:sa,:nb,:tc);";
+        $sql = "INSERT INTO Cartao(numeroCartao, saldo, nomeBanco, tipoCartao,id_conta) VALUES(:nc,:sa,:nb,:tc,:id);";
         $comando = $conexao->getConexao()->prepare($sql);
         $comando->bindValue("nc", $cartao->getNumeroCartao());
         $comando->bindValue("sa", $cartao->getSaldo());
         $comando->bindValue("nb", $cartao->getNomeBanco());
         $comando->bindValue("tc", $cartao->getTipoCartao());
+        $comando->bindValue("id", $cartao->getIdConta());
         if($comando->execute()){
             $conexao->__destruct();
             return true;

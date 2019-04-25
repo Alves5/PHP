@@ -1,8 +1,7 @@
-
 let divIndex = document.getElementById("index");
 //let divContato = document.getElementById("cont");
 //let divServico = document.getElementById("servi");
-//let divCarrega = document.getElementById("carrega");
+
 let btnIndex = document.getElementById("inde");
 let btnServico = document.getElementById("servico");
 let btnContato = document.getElementById("contato");
@@ -21,8 +20,10 @@ btnCartao.onclick = function() {
 	requisitarArquivo("cartao.php", divIndex);
 };
 
-/*dj2.onclick = function() {
-	requisitarArquivo("evideo.php", divCarrega);
-};*/
+let btnHistorico = document.getElementById("historico");
+let divCarrega = document.getElementById("carrega");
+btnHistorico.onclick = function() {
+	requisitarArquivo("historico.php", divIndex);
+};
 
 

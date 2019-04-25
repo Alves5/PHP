@@ -3,14 +3,13 @@ require('lib/Modelo/ContaModelo.class.php');
 require('lib/Controle/Conexao.class.php');
 $login = $_POST['login'];
 $senha = $_POST['pwd'];
+$cpf = $_POST['cpf'];
 $connect = new Conexao("lib/Controle/mysql.ini");
 $sql = "SELECT * FROM conta WHERE usuario = '$login'";  
 $comando = $connect->getConexao()->prepare($sql);
 $comando ->bindValue("usuario", $login);
 $comando->execute();
-
 $usu = new ContaModelo();
-
 if($login == "" or $login == null or $senha == "" or $senha == null){
   echo"
   <script language='javascript' type='text/javascript'>
@@ -27,6 +26,12 @@ if($login == "" or $login == null or $senha == "" or $senha == null){
     </script>";
     die();
   }else{
+    require('lib/Controle/MyCripty.class.php');
+    $mc = new MyCripty();
+    $mc -> chave = 97;
+    $mc -> add_text = md5(sha1("texto chave aqui"));
+    $senha = $mc->enc($senha);
+    //$cpf = $mc->enc($cpf);
     $query = "INSERT INTO conta(usuario,senha) VALUES ('$login','$senha')";
     $insert = $connect->getConexao()->prepare($query);
     $insert->execute();

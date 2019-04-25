@@ -2,19 +2,26 @@
 require_once("lib/Controle/historicoControle.class.php");
 $executa = new HistoricoControle();
 $registr = new HistoricoModelo();
-
 $registr->setData($_POST['data']);
 $registr->setNomeRegistro($_POST['nome']);
-
-//var_dump($tipo);
+if ($_POST['idCartao'] == 0) {
+    $registr->setIdCartao("a vista");
+} else {
+    $registr->setIdCartao($_POST['idCartao']);
+}
+//var_dump($_POST['idCartao']);
 $tipo = $_POST['tipoRegistro'];
+//var_dump($tipo);
 if ( $tipo == 1) {
     $registr->setValorE($_POST['valor']);    
-} else {
+} else{
     $registr->setValorS($_POST['valor']);    
 }
 if($executa->inserirRegistro($registr)){
-    echo "deu certo";
+    echo "<script language='javascript' type='text/javascript'>
+    alert('Deu certo!');
+    window.location.href='index.php';
+  </script>";
 }else {
     echo "tente novamente";
 }

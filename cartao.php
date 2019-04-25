@@ -42,13 +42,25 @@
 								<tbody>
 						<?php
 							require_once("lib/Controle/CartaoControle.class.php");
+							require('lib/Controle/MyCripty.class.php');
+							$mc = new MyCripty();
+							$mc -> chave = 97;
+							$mc -> add_text = md5(sha1("texto chave aqui"));
 							$todos = new CartaoControle();
 							foreach ($todos->consultaCartoes() as $key) {
 								echo "
 									<tr>
-										<td>{$key->getNumeroCartao()}</td>
+										<td>{$mc -> dec($key->getNumeroCartao())}</td>
 										<td>{$key->getNomeBanco()}</td>	
-										<td>{$key->getTipoCartao()}</td>
+										<td>";
+										if ($key->getTipoCartao() == 1) {
+											echo "Débito";
+										} else {
+											echo "Crédito";
+										}
+										echo"
+											
+										</td>
 										<td>{$key->getSaldo()}</td>
 
 									</tr>";

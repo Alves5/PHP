@@ -72,8 +72,8 @@ echo "
 		<div class='log_reg'>
 			<div class='log_reg_content d-flex flex-row align-items-center justify-content-end'>";
 			if (isset($_COOKIE['login'])) { echo"
-				<font color='white'>Bem-Vindo, {$_COOKIE['login']} </font>
-				<a class='btn btn-outline-secondary' href='logout.php'> Sair</a>";
+				<font color='white'>Bem-Vindo, {$_COOKIE['login']}.   </font>
+				<a class='btn btn-outline-secondary' href='logout.php'>Sair</a>";
 			}else{ echo "
 				<div class='login log_reg_text'><a href='#'>Login</a></div>
 				<div class='register log_reg_text'><a href='#'>Criar</a></div>";}
@@ -92,4 +92,4 @@ echo "
 		</nav>
 	</div>
 	<!--FIM-->";
-	?>
+?>
