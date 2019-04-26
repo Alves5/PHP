@@ -37,17 +37,20 @@
 										<th>Bandeira</th>
 										<th>Tipo</th>
 										<th>Saldo</th>
+										<th>Vencimento</th>
 									</tr>
 								</thead>
 								<tbody>
 						<?php
+							session_start();
 							require_once("lib/Controle/CartaoControle.class.php");
 							require('lib/Controle/MyCripty.class.php');
 							$mc = new MyCripty();
 							$mc -> chave = 97;
 							$mc -> add_text = md5(sha1("texto chave aqui"));
 							$todos = new CartaoControle();
-							foreach ($todos->consultaCartoes() as $key) {
+							$cpf = $_SESSION['cpf'];
+							foreach ($todos->consultaCartoes($cpf) as $key) {
 								echo "
 									<tr>
 										<td>{$mc -> dec($key->getNumeroCartao())}</td>
@@ -62,6 +65,7 @@
 											
 										</td>
 										<td>{$key->getSaldo()}</td>
+										<td>Falta apenas: {$key->getPrazo()} dias</td>
 
 									</tr>";
 							}
@@ -70,7 +74,6 @@
 							</table>
                     </div>
 				</div>
-				
 				<div class='col-lg-6 contact_col magic_fade_in'>
 						<div class='message_form_container'>
 							<div class='contact_title'>Inserir Novo</div>
@@ -79,7 +82,6 @@
 							?>
 						</div>
 					</div>
-				
 				<div class='col-lg-6 contact_col magic_fade_in'>
 					<div class='message_form_container'>
 						<div class='contact_title'>Comentários</div>

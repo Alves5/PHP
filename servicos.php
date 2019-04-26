@@ -31,8 +31,7 @@
 				<div class='col'>
 					<div class='contact_title magic_fade_in text-center'><h2>Serviços disponíveis</h2></div>
 				</div>
-			</div>
-			
+			</div>	
 			<div class='row services_row'>
 				<div class='col-lg-4 col-md-6 service_col magic_fade_in'>
 					<div class='service d-flex flex-column align-items-center justify-content-start text-center trans_200'>
@@ -84,15 +83,16 @@
 											<option value='0'> Saída </option>
 										</select>
 										<br>
-										<label>Qual cartão</label></br>
+										<label>Selecione como vai pagar</label></br>
 										<select name='idCartao' class='form-control'>
 											<option selected disabled>Selecione como vai pagar</option>
 											<option value="0">A vista</option>
 											<?php
+											session_start();
 											require_once("lib/Controle/CartaoControle.class.php");
 											$todos = new CartaoControle();
-											foreach ($todos->consultaCartoes() as $key) {
-												echo"<option value='{$key->getNumeroCartao()}'>{$key->getNomeBanco()}</option>";	
+											foreach ($todos->consultaCartoes($_SESSION['cpf']) as $key) {
+												echo"<option value='{$key->getNumeroCartao()}'>Cartão-{$key->getNomeBanco()}</option>";	
 											}
 											?>
 										</select>
@@ -165,8 +165,7 @@
 			</div>
 		</div>
 	</div>
-	
-	
+		
 	<div class='support'>
 		<div class='background_image support_background'></div>
 			<div class='container'>

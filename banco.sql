@@ -1,7 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS JavaWe;
 use JavaWe;
 CREATE TABLE IF NOT EXISTS Usuario(
-    id varchar(200) NOT NULL,
+    id  INT AUTO_INCREMENT NOT NULL,
     cpf_user varchar(200) NOT NULL,
     nome varchar(200) NOT NULL,
     email varchar(40) NOT NULL,
@@ -10,34 +10,33 @@ CREATE TABLE IF NOT EXISTS Usuario(
     PRIMARY KEY(id)
 );
 CREATE TABLE IF NOT EXISTS Conta(
-    id varchar(200) NOT NULL ,
+    cpf varchar(200) NOT NULL ,
     usuario varchar(20) NOT NULL,
     senha varchar(200) NOT NULL,
     dataCriacao varchar(200) NOT NULL,
-    PRIMARY KEY(id)
+    PRIMARY KEY(cpf)
 );
 
 CREATE TABLE IF NOT EXISTS Cartao(
-    id varchar(200) NOT NULL ,
     numeroCartao varchar(200) NOT NULL,
     saldo varchar(200) NOT NULL,
     nomeBanco varchar(20) NOT NULL,
     tipoCartao tinyint NOT NULL,
+    prazo INT(30) NOT NULL,
     id_conta varchar(200),
-    PRIMARY KEY(id),
-    CONSTRAINT fk_id_conta FOREIGN KEY (id_conta) REFERENCES Conta(id)
+    PRIMARY KEY(numeroCartao),
+    CONSTRAINT fk_id_conta FOREIGN KEY (id_conta) REFERENCES Conta(cpf)
 );
 
 CREATE TABLE IF NOT EXISTS Historico(
-    id_history varchar(200) NOT NULL ,
-    id_card varchar(200),
+    id_history INT AUTO_INCREMENT NOT NULL ,
+    id_card VARCHAR(200),
     data varchar(20) NOT NULL,
     nome varchar(55) NOT NULL,
     valorE DOUBLE,
     valorS DOUBLE,
-    valorA DOUBLE,
     PRIMARY KEY(id_history),
-    CONSTRAINT fk_id_card FOREIGN KEY (id_card) REFERENCES Cartao (id)
+    CONSTRAINT fk_id_card FOREIGN KEY (id_card) REFERENCES Cartao(numeroCartao)
 );
 /*CREATE TABLE IF NOT EXISTS CartaoCredito(
     id int NOT NULL AUTO_INCREMENT,

@@ -6,15 +6,19 @@ $mc -> add_text = md5(sha1("texto chave aqui"));
 $Qform = $_POST["form"];
 switch($Qform){
     case "Inserir":
+        require_once("lib/Controle/CartaoControle.class.php");
+        session_start();
         $saldo = $_POST["saldo"];
         $tCartao = $_POST["tipoCartao"];
         $nCartao = $mc->enc($_POST["numeroCartao"]);
         $nBanco = $_POST["nomeBanco"];
-        $idConta = $_POST["cpf"];
-        require_once("lib/Controle/CartaoControle.class.php");
+        $cpfConta = $_POST["cpf"];
+        $_SESSION['cpf'] = $cpfConta;
+        $dia = $_POST['dia'];
         $executar = new CartaoControle();
         $modelo = new CartaoModelo();
-        $modelo->setIdConta($idConta);
+        $modelo->setPrazo($dia);
+        $modelo->setIdConta($cpfConta);
         $modelo->setSaldo($saldo);
         $modelo->setTipoCartao($tCartao);
         $modelo->setNumeroCartao($nCartao);

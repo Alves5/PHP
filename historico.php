@@ -29,7 +29,7 @@ require('header.php');
     </div>
     <div class='container'>
         <div class='row'>
-            <div class='col-6'>
+            <div class='col-9'>
                 <center><h2>Entradas</h2></center>
                 <table class='table table-bordered table-dark'>
                     <thead>
@@ -59,7 +59,7 @@ require('header.php');
                 </table>
                 <br>
             </div>
-            <div class='col-6'>
+            <div class='col-9'>
                 <center><h2>Saídas</h2></center>
                 <table class='table table-bordered table-dark'>
                     <thead>
@@ -88,7 +88,7 @@ require('header.php');
                 <br>        
                 <h3>Balanço:</h3>
                 <?php        
-                        Print $todos->balanco();
+                        $todos->balanco();
                 ?>
             </div>
         </div>

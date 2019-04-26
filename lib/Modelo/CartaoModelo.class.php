@@ -1,6 +1,7 @@
 <?php
     class CartaoModelo{
         private $id_conta;
+        private $prazo;
         private $saldo;
         private $tipoCartao;
         private $numeroCartao;
@@ -10,7 +11,14 @@
             return $this->id_conta;
         }
         public function setIdConta($id){
-            $this->id = $id;
+            $this->id_conta = $id;
+        }
+        
+        public function getPrazo(){
+            return $this->prazo- date("d");
+        }
+        public function setPrazo($p){
+            $this->prazo = $p;
         }
         public function getSaldo(){
             return $this->saldo;

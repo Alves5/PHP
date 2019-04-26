@@ -58,6 +58,7 @@ echo"
 </footer>
 </div>
 
+
 <script src='js/jquery-3.2.1.min.js'></script>
 <script src='styles/bootstrap-4.1.2/popper.js'></script>
 <script src='styles/bootstrap-4.1.2/bootstrap.min.js'></script>
@@ -75,7 +76,8 @@ echo"
 <script src='js/custom.js'></script>
 <script src='js/modal.js'></script>
 <script src='js/jquery-3.2.1.min.js'></script>
-  
+<script src='js/jquery.mask.min.js'></script>  
+<script>$('.dinheiro').mask('#.##0,00', {reverse: true});</script>
 </body>
 
 </html>

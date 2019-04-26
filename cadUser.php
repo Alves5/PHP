@@ -32,7 +32,7 @@ if($login == "" or $login == null or $senha == "" or $senha == null){
     $mc -> add_text = md5(sha1("texto chave aqui"));
     $senha = $mc->enc($senha);
     //$cpf = $mc->enc($cpf);
-    $query = "INSERT INTO conta(usuario,senha) VALUES ('$login','$senha')";
+    $query = "INSERT INTO conta(usuario,senha,cpf) VALUES ('$login','$senha','$cpf')";
     $insert = $connect->getConexao()->prepare($query);
     $insert->execute();
     if($insert){

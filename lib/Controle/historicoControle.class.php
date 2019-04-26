@@ -40,9 +40,10 @@ final class HistoricoControle{
     }
     public function inserirRegistro($registro){
         $conexao = new Conexao("lib/Controle/mysql.ini");
-        $sql = "INSERT INTO historico(id_card,nome,data,valorE,valorS) VALUES(:id,:no,:da,:ve,:vs);";
+        $sql = "INSERT INTO historico(nome,data,valorE,valorS) VALUES(:no,:da,:ve,:vs);";
         $comando = $conexao->getConexao()->prepare($sql);
-        $comando->bindValue(":id", $registro->getIdCartao());
+        //$comando->bindValue(":id", $registro->getIdCartao());
+        //var_dump($registro->getIdCartao());
         $comando->bindValue(":no", $registro->getNomeRegistro());
         $comando->bindValue(":da", $registro->getData());
         $comando->bindValue(":ve", $registro->getValorE());
@@ -57,13 +58,16 @@ final class HistoricoControle{
     }
     public function balanco(){
         $conexao = new Conexao("lib/Controle/mysql.ini");
-        $sqlE ="SELECT SUM(valorS) FROM historico;";
-        $sqlS ="SELECT SUM(valorS)FROM historico;";
+        $sqlE ="SELECT SUM(valorS)-SUM(valorE) as valor1 FROM historico;";
+        //$sqlS ="SELECT SUM(valorS) as valor2 FROM historico;";
         $comandoE = $conexao->getConexao()->prepare($sqlE);
-        $comandoS = $conexao->getConexao()->prepare($sqlS);
-        if($comandoE->execute() AND $comandoS->execute()){
+        //$comandoS = $conexao->getConexao()->prepare($sqlS);
+        if($comandoE->execute()){
+            
+            while ($resultado = $comandoE->fetchAll()){;
+                var_dump($resultado[0]);
+            }
             $conexao->__destruct();
-            echo float($comandoE) - float($comandoS);
         }
     }
 }

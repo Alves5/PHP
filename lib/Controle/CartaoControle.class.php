@@ -17,9 +17,9 @@ final class CartaoControle{
         $conexao->__destruct();
         return $filmes;
     }
-    public function consultaCartoes(){
+    public function consultaCartoes($cpf){
         $conexao = new Conexao("lib/Controle/mysql.ini");
-        $comando = $conexao->getConexao()->prepare("SELECT * FROM Cartao;");
+        $comando = $conexao->getConexao()->prepare("SELECT * FROM Cartao WHERE id_conta = $cpf;");
         $comando->execute();
         $resultado = $comando->fetchAll();
         $lista = [];
@@ -30,6 +30,7 @@ final class CartaoControle{
             $cartao->setSaldo($item->saldo);
             $cartao->setNomeBanco($item->nomeBanco);
             $cartao->setTipoCartao($item->tipoCartao);
+            $cartao->setPrazo($item->prazo);
             array_push($lista, $cartao);
         }
         $conexao->__destruct();
@@ -37,13 +38,14 @@ final class CartaoControle{
     }
     public function inserirCartao($cartao){
         $conexao = new Conexao("lib/Controle/mysql.ini");
-        $sql = "INSERT INTO Cartao(numeroCartao, saldo, nomeBanco, tipoCartao,id_conta) VALUES(:nc,:sa,:nb,:tc,:id);";
+        $sql = "INSERT INTO Cartao(numeroCartao, saldo, nomeBanco, tipoCartao,id_conta,prazo) VALUES(:nc,:sa,:nb,:tc,:id,:pr);";
         $comando = $conexao->getConexao()->prepare($sql);
         $comando->bindValue("nc", $cartao->getNumeroCartao());
         $comando->bindValue("sa", $cartao->getSaldo());
         $comando->bindValue("nb", $cartao->getNomeBanco());
         $comando->bindValue("tc", $cartao->getTipoCartao());
         $comando->bindValue("id", $cartao->getIdConta());
+        $comando->bindValue("pr", $cartao->getPrazo());
         if($comando->execute()){
             $conexao->__destruct();
             return true;
