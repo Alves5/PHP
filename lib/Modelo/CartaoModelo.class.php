@@ -15,7 +15,12 @@
         }
         
         public function getPrazo(){
-            return $this->prazo- date("d");
+            $dia = $this->prazo- date("d");
+            if ($dia < 0) {
+                $dia = $dia +30;
+            }
+            
+            return $dia;
         }
         public function setPrazo($p){
             $this->prazo = $p;

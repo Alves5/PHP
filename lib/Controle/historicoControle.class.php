@@ -63,9 +63,13 @@ final class HistoricoControle{
         $comandoE = $conexao->getConexao()->prepare($sqlE);
         //$comandoS = $conexao->getConexao()->prepare($sqlS);
         if($comandoE->execute()){
-            
             while ($resultado = $comandoE->fetchAll()){;
-                var_dump($resultado[0]);
+                $a =$resultado[0]->valor1;
+                if ($a < 0 ) {
+                    echo"<p>Você está em dívida: $a</p>";
+                } else {
+                    echo"<p>Você está em lucro: $a</p>";
+                }
             }
             $conexao->__destruct();
         }

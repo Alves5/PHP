@@ -36,6 +36,18 @@ final class CartaoControle{
         $conexao->__destruct();
         return $lista;
     }
+    public function pegaCpf($user,$senha){
+        $conexao = new Conexao("lib/Controle/mysql.ini");
+        $comando = $conexao->getConexao()->prepare("SELECT cpf FROM Conta WHERE usuario = '$user' AND senha = '$senha';");
+        $comando->execute();
+        if ($comando->fetchAll() == NULL){
+            echo"vazio";
+        }else{
+            return $comando->fetchAll();
+            $conexao->__destruct();
+        }
+        
+    }
     public function inserirCartao($cartao){
         $conexao = new Conexao("lib/Controle/mysql.ini");
         $sql = "INSERT INTO Cartao(numeroCartao, saldo, nomeBanco, tipoCartao,id_conta,prazo) VALUES(:nc,:sa,:nb,:tc,:id,:pr);";
@@ -71,11 +83,11 @@ final class CartaoControle{
             return false;
         }
     }
-    public function deletarCartao($id){
+    public function deletaCartao($id){
         $conexao = new Conexao("lib/Controle/mysql.ini");
-        $sql="DELETE FROM Cartao WHERE id=:id";
+        $sql="DELETE FROM Cartao WHERE numeroCartao=:id";
         $comando = $conexao->getConexao()->prepare($sql);
-        $comando->bindParam("id", $id);
+        $comando->bindValue("id", $id);
         if($comando->execute()){
             $conexao->__destruct();
             return true;

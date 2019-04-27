@@ -15,7 +15,7 @@
 							<div class='breadcrumbs'>
 								<ul class='d-flex flex-row align-items-center justify-content-start'>
 									<li><a href='index.php'>Home</a></li>
-									<li>Contatos</li>
+									<li>Cartões</li>
 								</ul>
 							</div>
 						</div>
@@ -38,40 +38,29 @@
 										<th>Tipo</th>
 										<th>Saldo</th>
 										<th>Vencimento</th>
+										<th>Editar</th>
+										<th>Deletar</th>
 									</tr>
 								</thead>
 								<tbody>
-						<?php
-							session_start();
-							require_once("lib/Controle/CartaoControle.class.php");
-							require('lib/Controle/MyCripty.class.php');
-							$mc = new MyCripty();
-							$mc -> chave = 97;
-							$mc -> add_text = md5(sha1("texto chave aqui"));
-							$todos = new CartaoControle();
-							$cpf = $_SESSION['cpf'];
-							foreach ($todos->consultaCartoes($cpf) as $key) {
-								echo "
-									<tr>
-										<td>{$mc -> dec($key->getNumeroCartao())}</td>
-										<td>{$key->getNomeBanco()}</td>	
-										<td>";
-										if ($key->getTipoCartao() == 1) {
-											echo "Débito";
-										} else {
-											echo "Crédito";
-										}
-										echo"
-											
-										</td>
-										<td>{$key->getSaldo()}</td>
-										<td>Falta apenas: {$key->getPrazo()} dias</td>
-
-									</tr>";
-							}
-						?>
+									<?php
+										session_start();
+										require_once("lib/Controle/CartaoControle.class.php");
+										require('lib/Controle/MyCripty.class.php');
+										$mc = new MyCripty();
+										$mc -> chave = 97;
+										$mc -> add_text = md5(sha1("texto chave aqui"));
+										$todos = new CartaoControle();
+										//$_SESSION['cpf'] = 
+										$cpf = $todos->pegaCpf($_COOKIE['login'],$_SESSION['senha']);
+										//$cpf = $_SESSION['cpf'];
+										var_dump($cpf);
+										var_dump($_COOKIE['login']);
+										var_dump($_SESSION['senha']);
+									?>	
 								</tbody>	
 							</table>
+						</div>
                     </div>
 				</div>
 				<div class='col-lg-6 contact_col magic_fade_in'>
@@ -82,17 +71,7 @@
 							?>
 						</div>
 					</div>
-				<div class='col-lg-6 contact_col magic_fade_in'>
-					<div class='message_form_container'>
-						<div class='contact_title'>Comentários</div>
-						<form action='#' id='message_form' class='message_form'>
-							<input type='text' class='message_input' placeholder='Seu nome' required='required'>
-							<input type='email' class='message_input' placeholder='Seu e-mail' required='required'>
-							<textarea class='message_input message_textarea' placeholder='Mensagem' required='required'></textarea>
-							<button class='message_form_button'>Enviar</button>
-						</form>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>

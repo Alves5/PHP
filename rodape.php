@@ -76,8 +76,12 @@ echo"
 <script src='js/custom.js'></script>
 <script src='js/modal.js'></script>
 <script src='js/jquery-3.2.1.min.js'></script>
-<script src='js/jquery.mask.min.js'></script>  
-<script>$('.dinheiro').mask('#.##0,00', {reverse: true});</script>
+<script src='js/sweetalert.min.js'></script>
+<script>
+$('.telefone').mask('(00) 0 0000-0000');
+$('.dinheiro').mask('#.##0,00', {reverse: true});
+$('.estado').mask('AA');  
+</script>
 </body>
 
 </html>

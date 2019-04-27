@@ -2,7 +2,7 @@
     echo"
     <form id='message_form' class='message_form' action='ExecucaoCartao.php' enctype='multipart/form-data' method='POST'>
         <input type='text' class='message_input' name='dia' placeholder='Dia de vencimento' /></br>
-        <input type='text' class='message_input' name='saldo' placeholder='Limite do cartão' /></br>
+        <input type='text' class='message_input' name='saldo' placeholder='Saldo' /></br>
         <label>Tipo do Cartão</label></br>
         <select name='tipoCartao' class='form-control' required>
             <option selected disabled>Selecione o Tipo</option>
@@ -24,5 +24,4 @@
         <input type='submit' name='form' value='Inserir' class='message_form_button' data-toggle='modal' data-target='#modalExemplo3'/>
     </form>
     ";
-    echo date('d');
 ?>

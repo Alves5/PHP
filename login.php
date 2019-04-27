@@ -22,6 +22,9 @@ if ($comando->fetchAll() == NULL){
   </script>";
   die();
 }else{
+  session_start();
+  //$_SESSION['user'] = $user;                                                          
+  $_SESSION['senha'] = $senha;
   setcookie("login",$user);
   header("Location: index.php");
 

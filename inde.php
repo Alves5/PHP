@@ -85,11 +85,6 @@
 					</div>
 				</div>
 			</div>
-			<div class='row'>
-				<div class='col text-center'>
-					<div class='intro_button text-center trans_200 ml-auto mr-auto'><a href='#'>Por apenas R$99,99 mensais</a></div>
-				</div>
-			</div>
 		</div>
 	</div>
 	<div class='choice'>

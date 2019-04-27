@@ -41,6 +41,11 @@ if($login == "" or $login == null or $senha == "" or $senha == null){
         alert('Usuário cadastrado com sucesso!');
         window.location.href='index.php';
       </script>";
+      /*echo"<script src='js/sweetalert.min.js'></script>  
+      <script language='javascript' type='text/javascript'>
+        swal('Usuário cadastrado com sucesso!', 'Clique no botão para voltar!', 'success');
+        
+      </script>";*/
     }else{
       echo"
       <script language='javascript' type='text/javascript'>

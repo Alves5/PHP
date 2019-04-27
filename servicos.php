@@ -153,6 +153,10 @@
 									if (!isset($_COOKIE['login'])) {
 										echo " <p> Você precisa estar logado";
 									} 
+									require_once("lib/Controle/historicoControle.class.php");
+									$todos = new HistoricoControle();
+									echo"Balanço:";
+									$todos->balanco();
 									?>
 								</div>
 								<div class="modal-footer">
@@ -176,8 +180,8 @@
 							<div class='support_text'>
 								<p>Se você, nosso cliente, não se sentir a vontade ou não gostar de um gerenciamento assim, poderá ter acessoa a um atendimento em tempo real pelo o funcionário responsável pelo seu gerenciamento financeiro, de forma que a ligação será gravada para caso acontecer algum problema,você tê-la guardada.</p>
 							</div>
-							<div class='support_price'>Por apenas <span>R$99.99</span> mensais</div>
-							<div class='button trans_200'><a href='#'>Comece agora</a></div>
+							
+							<div class='button trans_200'><a href='#'>Fale Conosco</a></div>
 						</div>
 					</div>
 				</div>
